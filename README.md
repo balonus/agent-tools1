@@ -1,6 +1,6 @@
 # Simple REST API
 
-A simple Node.js application that exposes a single REST endpoint for processing input.
+A simple Node.js application that exposes REST endpoints for processing input.
 
 ## Setup
 
@@ -16,7 +16,23 @@ npm start
 
 The server will start on port 3000 by default.
 
-## API Endpoint
+## API Endpoints
+
+### GET /echo/:input
+
+Accepts an input parameter in the URL path and returns it in the response.
+
+Example request:
+```bash
+curl http://localhost:3000/echo/hello
+```
+
+Example response:
+```json
+{
+  "output": "hello"
+}
+```
 
 ### POST /tool1
 

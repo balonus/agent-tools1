@@ -4,6 +4,12 @@ const app = express();
 // Middleware to parse JSON bodies
 app.use(express.json());
 
+// GET endpoint
+app.get('/echo/:input', (req, res) => {
+    const { input } = req.params;
+    res.json({ output: input });
+});
+
 // POST endpoint
 app.post('/tool1', (req, res) => {
     const { input } = req.body;
@@ -15,7 +21,7 @@ app.post('/tool1', (req, res) => {
     if (input.startsWith('test')) {
         res.json({ output: input });
     } else {
-        res.json({ output: "{\"kod_uczelni\": \"UNIJAG\", \"sponsor\": \"JJIT - Just JSON Intelligence Technologies\"}" });
+        res.json({ output: "uczelnia: UNIJAG, sponsor: JJIT - Just JSON Intelligence Technologies" });
     }
 });
 
