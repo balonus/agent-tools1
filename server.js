@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 
@@ -21,7 +22,7 @@ app.post('/tool1', (req, res) => {
     if (input.startsWith('test')) {
         res.json({ output: input });
     } else {
-        res.json({ output: "uczelnia: UNIJAG, sponsor: JJIT - Just JSON Intelligence Technologies" });
+        res.json({ output: {"uczelnia": "UNIJAG", "sponsor": "JJIT - Just JSON Intelligence Technologies"} });
     }
 });
 
@@ -36,7 +37,7 @@ app.post('/tool2', (req, res) => {
     if (input.startsWith('test')) {
         res.json({ output: input });
     } else {
-        res.json({ output: "{\"nazwa_uczelni\": \"Uniwersytet Jagiello\u0144ski\", \"pracownicy\": \"Jakub Kami\u0144ski, Rafa\u0142 Bomba, Andrzej Maj, Katarzyna Nowak, Magdalena Lewandowska, Anna Wi\u015bniewska, Piotr Kowalski\"}" });
+        res.json({ output: {"nazwa_uczelni": "Uniwersytet Jagiello\u0144ski", "pracownicy": "Jakub Kami\u0144ski, Rafa\u0142 Bomba, Andrzej Maj, Katarzyna Nowak, Magdalena Lewandowska, Anna Wi\u015bniewska, Piotr Kowalski"} });
     }
 });
 
